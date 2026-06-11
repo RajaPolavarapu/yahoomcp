@@ -7,7 +7,7 @@ name = "yahoo-finance-mcp"
 version = "0.1.0"
 description = "MCP server implementation for yahoo finance integration"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 dependencies = [
     "mcp[cli]>=1.6.0",
     "yfinance>=0.2.62",
@@ -29,7 +29,7 @@ only-include = ["server.py"]
 
 [tool.black]
 line-length = 100
-target-version = ['py311']
+target-version = ['py312']
 include = '\.pyi?$'
 
 [tool.isort]
@@ -46,7 +46,7 @@ extend-ignore = ["E203"]
 exclude = [".git", "__pycache__", "build", "dist", ".venv"]
 
 [tool.mypy]
-python_version = "3.11"
+python_version = "3.12"
 warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = true
