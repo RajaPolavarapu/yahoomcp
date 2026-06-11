@@ -33,6 +33,9 @@ class RecommendationType(str, Enum):
 # Initialize FastMCP server
 yfinance_server = FastMCP(
     "yfinance",
+    host="0.0.0.0",
+    streamable_http_path="/mcp",
+    stateless_http=True,
     instructions="""
 # Yahoo Finance MCP Server
 
@@ -411,7 +414,7 @@ async def get_recommendations(ticker: str, recommendation_type: str, months_back
         return f"Error: getting recommendations for {ticker}: {e}"
 
 
-app = yfinance_server.sse_app()
+app = yfinance_server.streamable_http_app()
 application = app
 handler = app
 
