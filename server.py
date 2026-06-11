@@ -411,6 +411,11 @@ async def get_recommendations(ticker: str, recommendation_type: str, months_back
         return f"Error: getting recommendations for {ticker}: {e}"
 
 
+app = yfinance_server.sse_app()
+application = app
+handler = app
+
+
 def main() -> None:
     # Initialize and run the server
     print("Starting Yahoo Finance MCP server...")
